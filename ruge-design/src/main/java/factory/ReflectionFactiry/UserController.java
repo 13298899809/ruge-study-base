@@ -1,6 +1,7 @@
 package factory.ReflectionFactiry;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 /**
  * @author ruge.wu
@@ -10,7 +11,7 @@ import org.junit.jupiter.api.Test;
  */
 public class UserController {
     @Test
-    public void register() {
+    public void register1() {
         UserService userService = BeanFactiry.getUserService();
         userService.register();
     }

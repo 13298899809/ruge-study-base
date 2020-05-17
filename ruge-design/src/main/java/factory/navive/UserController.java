@@ -1,6 +1,7 @@
 package factory.navive;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 /**
  * @author ruge.wu

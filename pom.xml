@@ -12,6 +12,14 @@
         <module>ruge-design</module>
     </modules>
 
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <junit.version>4.12</junit.version>
+        <!--5.2.6-->
+        <spring.version>5.1.4.RELEASE</spring.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -21,6 +29,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--junit单元测试-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+
+
+
         </dependencies>
     </dependencyManagement>
 </project>
