@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ruge-design</module>
+        <module>ruge-guava</module>
     </modules>
 
     <properties>
@@ -18,6 +19,7 @@
 
         <junit.version>4.12</junit.version>
         <lombok.version>1.18.12</lombok.version>
+        <guava.version>29.0-jre</guava.version>
         <!--5.2.6-->
         <spring.version>5.1.4.RELEASE</spring.version>
         <!--数据库-->
@@ -52,7 +54,12 @@
                 <version>${lombok.version}</version>
             </dependency>
 
-
+            <!-- guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
