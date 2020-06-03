@@ -11,6 +11,7 @@
     <modules>
         <module>ruge-design</module>
         <module>ruge-guava</module>
+        <module>ruge-thread</module>
     </modules>
 
     <properties>
