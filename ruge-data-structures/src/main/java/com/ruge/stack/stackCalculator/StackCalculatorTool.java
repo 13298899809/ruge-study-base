@@ -9,49 +9,63 @@ package com.ruge.stack.stackCalculator;
 public class StackCalculatorTool {
 
     /**
-     * 增加一个方法，可以返回当前栈顶的值, 但是不是真正的pop
-     *
-     * @param stack
-     * @return
+     * @param stackCalculator {@link StackCalculator}
+     * @return 增加一个方法，可以返回当前栈顶的值, 但是不是真正的pop
      */
-    public static int peek(StackCalculator stack) {
-        return stack.getStack()[stack.getTop()];
+    public static int peek(StackCalculator stackCalculator) {
+        return stackCalculator.getStack()[stackCalculator.getTop()];
     }
 
-    //栈满
-    public static boolean isFull(StackCalculator stack) {
-        return stack.getTop() == stack.getMaxSize() - 1;
+    /**
+     * @param stackCalculator {@link StackCalculator}
+     * @return 栈是否满
+     */
+    public static boolean isFull(StackCalculator stackCalculator) {
+        return stackCalculator.getTop() == stackCalculator.getMaxSize() - 1;
     }
 
-    //栈空
-    public static boolean isEmpty(StackCalculator stack) {
-        return stack.getTop() == -1;
+    /**
+     * @param stackCalculator {@link StackCalculator}
+     * @return 栈是否空
+     */
+    public static boolean isEmpty(StackCalculator stackCalculator) {
+        return stackCalculator.getTop() == -1;
     }
 
-    //入栈-push
-    public static void push(StackCalculator stack, int value) {
+    /**
+     * @param stackCalculator {@link StackCalculator}
+     * @param value           入栈-push
+     */
+    public static void push(StackCalculator stackCalculator, int value) {
         //先判断栈是否满
-        if (isFull(stack)) {
+        if (isFull(stackCalculator)) {
             System.out.println("栈满");
             return;
         }
-        stack.setTop(stack.getTop() + 1);
-        stack.getStack()[stack.getTop()] = value;
+        stackCalculator.setTop(stackCalculator.getTop() + 1);
+        stackCalculator.getStack()[stackCalculator.getTop()] = value;
     }
 
-    //出栈-pop, 将栈顶的数据返回
-    public static int pop(StackCalculator stack) {
+    /**
+     * @param stackCalculator {@link StackCalculator}
+     * @return 出栈-pop, 将栈顶的数据返回
+     */
+    public static int pop(StackCalculator stackCalculator) {
         //先判断栈是否空
-        if (isEmpty(stack)) {
+        if (isEmpty(stackCalculator)) {
             //抛出异常
             throw new RuntimeException("栈空，没有数据~");
         }
-        int value = stack.getStack()[stack.getTop()];
-        stack.setTop(stack.getTop() - 1);
+        int value = stackCalculator.getStack()[stackCalculator.getTop()];
+        stackCalculator.setTop(stackCalculator.getTop() - 1);
         return value;
     }
 
-    //显示栈的情况[遍历栈]， 遍历时，需要从栈顶开始显示数据
+    /**
+     * 显示栈的情况[遍历栈]， 遍历时，需要从栈顶开始显示数据
+     *
+     * @param stackCalculator {@link StackCalculator}
+     */
     public static void list(StackCalculator stackCalculator) {
         if (isEmpty(stackCalculator)) {
             System.out.println("栈空，没有数据~~");
@@ -63,8 +77,11 @@ public class StackCalculatorTool {
         }
     }
 
-    //返回运算符的优先级，优先级是程序员来确定, 优先级使用数字表示
-    //数字越大，则优先级就越高.
+
+    /**
+     * @param oper 数字越大，则优先级就越高.
+     * @return 返回运算符的优先级，优先级是程序员来确定, 优先级使用数字表示
+     */
     public static int priority(int oper) {
         if (oper == '*' || oper == '/') {
             return 1;
@@ -75,12 +92,22 @@ public class StackCalculatorTool {
         }
     }
 
-    //判断是不是一个运算符
+    /**
+     * @param val 字符
+     * @return 判断是不是一个运算符
+     */
     public static boolean isOper(char val) {
         return val == '+' || val == '-' || val == '*' || val == '/';
     }
 
-    //计算方法
+    /**
+     * 计算方法
+     *
+     * @param num1 数据1
+     * @param num2 数据2
+     * @param oper 操作符
+     * @return 结果
+     */
     public static int cal(int num1, int num2, int oper) {
         int res = 0; // res 用于存放计算的结果
         switch (oper) {
