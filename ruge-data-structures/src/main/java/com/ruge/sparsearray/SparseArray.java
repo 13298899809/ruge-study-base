@@ -76,7 +76,8 @@ public class SparseArray {
          * 2   2   2   2
          * 3   3   2   1
          */
-        int count = 0; //count 用于记录是第几个非0数据
+        //count 用于记录是第几个非0数据
+        int count = 0;
         for (int i = 0; i < 11; i++) {
             for (int j = 0; j < 11; j++) {
                 if (chessPlay[i][j] != 0) {
