@@ -87,6 +87,6 @@ public class BubbleSort {
     @After
     public void after() {
         end = LocalDateTime.now();
-        System.out.println(Duration.between(start, end).toMillis());
+        System.out.println("冒泡排序排序耗时:"+Duration.between(start, end).toMillis());
     }
 }
