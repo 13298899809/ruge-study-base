@@ -9,7 +9,7 @@ public class TestJdkProxy {
         /**
          * 创建目标对象
          */
-        ITeacherDao teacherDao = new TeacherDao();
+        ITeacherDao teacherDao = new TeacherDaoImpl();
         /**
          * 给目标对象创建代理对象 可以转成 ITeacherDao
          */
@@ -23,7 +23,7 @@ public class TestJdkProxy {
     @Test
     public void testJDK8() {
         /* 创建目标对象 */
-        ITeacherDao teacherDao = new TeacherDao();
+        ITeacherDao teacherDao = new TeacherDaoImpl();
         /* 给目标对象创建代理对象 可以转成 ITeacherDao */
         ITeacherDao proxyInstance = (ITeacherDao) new JDK8ProxyFactory().getProxyInstance(teacherDao);
         System.out.println("代理对象:" + proxyInstance);

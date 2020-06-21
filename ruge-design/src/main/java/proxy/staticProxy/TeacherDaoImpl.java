@@ -1,6 +1,6 @@
 package proxy.staticProxy;
 
-public class TeacherDao implements ITeacherDao {
+public class TeacherDaoImpl implements ITeacherDao {
     @Override
     public void teach() {
 

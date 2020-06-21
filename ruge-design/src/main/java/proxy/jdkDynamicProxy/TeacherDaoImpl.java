@@ -1,6 +1,6 @@
 package proxy.jdkDynamicProxy;
 
-public class TeacherDao implements ITeacherDao {
+public class TeacherDaoImpl implements ITeacherDao {
     /**
      * 老师在授课
      */
